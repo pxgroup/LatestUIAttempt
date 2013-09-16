@@ -1,0 +1,104 @@
+body{
+    background-color: #eee;
+}
+
+ul { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    margin-bottom: 10px; }
+li {
+    margin: 5px; 
+    padding: 5px; 
+    /*width: 150px;*/
+}
+
+.box{
+    /*border: 1px dotted #999;*/
+    padding: 10px;
+
+}
+.box-dotted{
+    border: 1px dotted #999;
+    padding: 10px;
+
+}
+.box-solid{
+    border: 1px solid #999;
+    padding: 10px;
+
+}
+
+
+#Main-outer{
+
+}
+#Main-inner{
+
+}
+#Main{
+    background-color: #fff;
+    padding: 10px;
+    max-width: 960px;
+    margin: 0 auto;
+    border: 1px dotted #ccc;
+    box-shadow: 0 0 4px #999;
+}
+
+.draggable{
+
+}
+
+.draggable li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+.draggable li h5 { margin: 0 0 0.4em; cursor: move; }
+.draggable li a { float: right; }
+.draggable li a.ui-icon-zoomin { float: left; }
+.draggable li img { width: 100%; cursor: move; }
+
+.droppable{
+
+
+}
+
+
+.Section{
+    padding: 0px;
+    margin: 0px;
+}
+.Field{
+    margin-bottom: 5px;
+    padding: 5px 2px;
+    border-left: 20px solid #444;
+}
+
+
+#LeftColumn{
+
+}
+#LeftColumn .Section{
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 0px solid #000;
+    border-width: 2px 0px;
+    border-radius:  20px;
+    background-color: rgba(255,255,255,0.8);
+
+}
+#LeftColumn  .Group{
+    border: 1px dotted red;
+    min-height: 10px; 
+}
+#LeftColumn > li{
+    /*border-top: 10px solid #999;*/
+}
+#LeftColumn  li li{
+
+}
+
+#RightColumn{
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    min-height: 250px;
+}
+#RightColumn > *:hover{
+    border-bottom: 1px solid #555;
+}

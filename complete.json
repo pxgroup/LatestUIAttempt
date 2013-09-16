@@ -1,0 +1,287 @@
+{
+    "id" : "the-id-for-the-form-tag",
+    "config" : {
+        "register_destination" : "/index.html",
+        "subscribe_to" : "group-name",
+        "subscribe_to" : [ "group-name-1", "group-name-2" ],
+        "set_price_field" : "price2",
+        "form_prefix_file" : "form_prefix.html",
+        "form_postfix_file" : "form_postfix.html",
+        "require_ssl" : 1,
+        "activation" : {
+            "required" : 0,
+            "send_email" : 0,
+            "subject" : "%domain% - Activate your account %first_name%",
+            "from_email" : "noreply@sitesuite.com.au",
+            "html_content" : "activate_email.html",
+            "text_content" : "activate_email.txt",
+            "notify_admin" : {
+                "send_email" : 0,
+                "email" : "noreply@sitesuite.com.au",
+                "from_email" : "%email%",
+                "subject" : "%domain% - Activate your account %first_name%",
+                "html_content" : "activate_admin_email.html",
+                "text_content" : "activate_admin_email.txt"
+            }
+        },
+        "welcome" : {
+            "send_email" : 1,
+            "from_email" : "noreply@sitesuite.com.au",
+            "subject" : "Welcome %first_name% %last_name% to %store_title%",
+            "html_content" : "welcome_email.html",
+            "text_content" : "welcome_email.txt",
+            "notify_admin" : {
+                "send_email" : 0,
+                "email" : "cees@sitesuite.com.au",
+                "from_email" : "%email%",
+                "subject" : "Welcome %first_name% %last_name% to %store_title%",
+                "html_content" : "welcome_admin_email.html",
+                "text_content" : "welcome_admin_email.txt"
+            }
+        },
+        "first_login" : {
+            "send_email" : 1,
+            "from_email" : "noreply@sitesuite.com.au",
+            "subject" : "Welcome %first_name% %last_name% to %store_title%",
+            "html_content" : "first_login_email.html",
+            "text_content" : "first_login_email.txt",
+            "notify_admin" : {
+                "send_email" : 0,
+                "email" : "cees@sitesuite.com.au",
+                "from_email" : "%email%",
+                "subject" : "Welcome %first_name% %last_name% to %store_title%",
+                "html_content" : "first_login_admin_email.html",
+                "text_content" : "first_login_admin_email.txt"
+            }
+        }
+    },
+    "sections" : [
+    {
+        "name" : "general",
+        "heading" : "<h1>Your Details:</h1>",
+        "description" : "",
+        "fields" : [
+        {
+            "name" : "title",
+            "size" : 0,
+            "type" : "select",
+            "class" : "feedback_input3",
+            "label" : "Title:",
+            "options" : ["", "Mr", "Mrs", "Ms", "Miss"],
+            "labels"  : {
+                ""  : "- Select -"
+            }
+        },
+        {
+            "maxlength" : 255,
+            "name" : "last_name",
+            "size" : 25,
+            "type" : "text",
+            "class" : "feedback_input",
+            "label" : "Surname / Family Name:",
+            "required" : 1
+        },
+        {
+            "maxlength" : 255,
+            "name" : "first_name",
+            "size" : 25,
+            "type" : "text",
+            "class" : "feedback_input",
+            "label" : "Given Name:",
+            "required" : 1
+        },
+        {
+            "maxlength" : 255,
+            "name" : "dob",
+            "size" : 25,
+            "type" : "text",
+            "class" : "feedback_input",
+            "label" : "Date of Birth: (dd/mm/yyyy)",
+            "required" : 1
+        },			
+        {
+            "name" : "sex",
+            "size" : 0,
+            "type" : "select",
+            "class" : "feedback_input3",
+            "label" : "Sex:",
+            "required" : 1,
+            "options" : ["", "M", "F"],
+            "labels"  : {
+                ""  : "- Select -",
+                "M" : "Male",
+                "F" : "Female"
+            }
+        },
+        {
+            "maxlength" : 255,
+            "name" : "address",
+            "size" : 25,
+            "type" : "text",
+            "class" : "feedback_input",
+            "label" : "Street Address:",
+            "required" : 1
+        },
+        {
+            "maxlength" : 255,
+            "name" : "city",
+            "size" : 25,
+            "type" : "text",
+            "class" : "feedback_input",
+            "label" : "City/Suburb:",
+            "required" : 1
+        },
+        {
+            "name" : "state",
+            "size" : 0,
+            "type" : "select",
+            "class" : "feedback_input3",
+            "label" : "State ( *only if you live in Australia ):",
+            "options" : ["", "ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"],
+            "labels"  : {
+                ""  : "- Select -"
+            }
+        },
+        {
+            "maxlength" : 255,
+            "name" : "post_code",
+            "size" : 25,
+            "type" : "text",
+            "class" : "feedback_input",
+            "label" : "Postal Code:",
+            "required" : 1
+        },
+        {
+            "maxlength" : 255,
+            "name" : "home_phone",
+            "size" : 25,
+            "type" : "text",
+            "class" : "feedback_input",
+            "label" : "Home Number:"
+        },
+        {
+            "maxlength" : 255,
+            "name" : "work_phone",
+            "size" : 25,
+            "type" : "text",
+            "class" : "feedback_input",
+            "label" : "Work Number:"
+        },
+        {
+            "maxlength" : 255,
+            "name" : "mobile_phone",
+            "size" : 25,
+            "type" : "text",
+            "class" : "feedback_input",
+            "label" : "Mobile",
+            "required" : 1
+        },
+        {
+            "maxlength" : 255,
+            "name" : "fax",
+            "size" : 25,
+            "type" : "text",
+            "class" : "feedback_input",
+            "label" : "Fax Number:"
+        },
+        {
+            "maxlength" : 255,
+            "required" : 1,
+            "name" : "email",
+            "type" : "email",
+            "class" : "feedback_input",
+            "label" : "Email",
+            "size" : 25,
+            "accessible" : ["create", "admincreate"]
+        },
+        {
+            "maxlength" : 35,
+            "name" : "password",
+            "description" : "Minimum 6 characters.",
+            "size" : 25,
+            "required" : 1,
+            "label" : "Your New Enrolment Password",
+            "type" : "password",
+            "class" : "feedback_input",
+            "accessible" : ["create", "admincreate"]
+        },
+        {
+            "maxlength" : 35,
+            "name" : "password_check",
+            "size" : 25,
+            "required" : 1,
+            "label" : "Confirm Password",
+            "type" : "password",
+            "class" : "feedback_input",
+            "accessible" : ["create", "admincreate"]
+        }
+        ]
+    },
+    {
+        "name" : "privacy",
+        "heading" : "Privacy",
+        "description" : "",
+        "fields" : [
+        {
+            "name" : "subscribe_to",
+            "description" : "If checked, we may occationally send you information about products or services that we think you will like.",
+            "type" : "checkboxes",
+            "label" : "",
+            "accessible" : ["create","admincreate"],
+            "checkboxes" : [
+            "default",
+            {
+                "id" : "group_checkbox_default",
+                "label" : "Keep me informed"
+            }
+            ]
+        },
+        {
+            "value" : "yes",
+            "name" : "terms",
+            "required" : 1,
+            "type" : "checkboxes",
+            "label" : "",
+            "checkboxes" : [
+            "accepted",
+            {
+                "id" : "terms_checkbox",
+                "label" : "I have read and agree to the <a class=\"termsLink\" href=\"#\">Terms of Service</a>.",
+                "escape_html" : 0
+            }
+            ],
+            "accessible" : ["create","admincreate"]
+        }
+        ]
+    },
+    {
+        "name" : "humantest",
+        "heading" : "Human Test",
+        "description" : "",
+        "fields" : [
+        {
+            "name"  : "humantest",
+            "type"  : "mathcaptcha",
+            "class" : "txtField",
+            "label" : "Captcha"
+        }
+        ]
+    }
+    ],
+    "buttons" : [
+    {
+        "value" : ":: Submit Form ::",
+        "name" : "submit_button",
+        "type" : "submit",
+        "class" : "feedback_button",
+        "accessible" : ["create", "admincreate"]
+    },
+    {
+        "value" : ":: Update Account ::",
+        "name" : "submit_button",
+        "type" : "submit",
+        "class" : "feedback_button",
+        "accessible" : ["edit", "adminedit"]
+    }
+    ]
+}

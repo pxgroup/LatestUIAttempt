@@ -1,0 +1,292 @@
+.x-wrapper {
+  margin: 0 auto;
+}
+.x-box {
+  padding: 10px;
+  padding: 1rem;
+}
+.x-box-left-right-bottom,
+.x-box-u {
+  padding: 10px;
+  padding: 1rem;
+  padding-top: 0px;
+}
+.x-box-lr,
+.x-box-left-right {
+  padding: 0 10px;
+  padding: 0 1rem;
+}
+.x-box-tb,
+.x-box-top-bottom {
+  padding: 0 10px;
+  padding: 0 1rem;
+}
+.x-box-l,
+.x-box-left {
+  padding-left: 10px;
+  padding-left: 1rem;
+}
+.x-box-r,
+.x-box-right {
+  padding-right: 10px;
+  padding-right: 1rem;
+}
+.w100 {
+  width: 100% ;
+}
+.w80 {
+  width: 80% ;
+}
+.w75 {
+  width: 75% ;
+}
+.w70 {
+  width: 70% ;
+}
+.w66 {
+  width: 66.6666% ;
+}
+.w62 {
+  width: 61.8%;
+}
+.w60 {
+  width: 60% ;
+}
+.w50 {
+  width: 50% ;
+}
+.w40 {
+  width: 40% ;
+}
+.w38 {
+  width: 38.2% ;
+}
+.w33 {
+  width: 33.3333% ;
+}
+.w30 {
+  width: 30% ;
+}
+.w25 {
+  width: 25% ;
+}
+.w20 {
+  width: 20% ;
+}
+.w10 {
+  width: 10%;
+}
+/*Children*/.children-w100 > * {
+  width: 100% ;
+}
+.children-w80 > * {
+  width: 80% ;
+}
+.children-w75 > * {
+  width: 75% ;
+}
+.children-w70 > * {
+  width: 70% ;
+}
+.children-w66 > * {
+  width: 66.6666% ;
+}
+.children-w62 > * {
+  width: 61.8%;
+}
+.children-w60 > * {
+  width: 60% ;
+}
+.children-w50 > * {
+  width: 50% ;
+}
+.children-w40 > * {
+  width: 40% ;
+}
+.children-w38 > * {
+  width: 38.2% ;
+}
+.children-w33 > * {
+  width: 33.3333% ;
+}
+.children-w30 > * {
+  width: 30% ;
+}
+.children-w25 > * {
+  width: 25% ;
+}
+.children-w20 > * {
+  width: 20% ;
+}
+.children-w10 > * {
+  width: 10%;
+}
+/*
+* --------------------------------------------
+* Spaces
+* --------------------------------------------
+*  */
+.clr,
+.clear,
+.Clear,
+.CLR {
+  clear: both;
+}
+.space {
+  padding-bottom: 20px;
+  padding-bottom: 2rem;
+  height: 1px;
+}
+.space.line {
+  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+/* Hacks */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+/*
+* --------------------------------------------
+* Floats
+* --------------------------------------------
+*  */
+/* floats , Padding & positioning */
+.float-left {
+  float: left;
+  /*    margin: 0px;*/
+
+}
+.float-right {
+  float: right;
+  /*    margin: 0px;*/
+
+}
+div.float-center {
+  margin: 0 auto;
+}
+/*
+* --------------------------------------------
+* Padding
+* --------------------------------------------
+*  */
+.padding {
+  padding: 10px;
+  padding: 1rem;
+}
+.padding-lr-20 {
+  padding: 0 10px;
+  padding: 0 1rem;
+}
+.padding-tb-20 {
+  padding: 10px 0;
+  padding: 1rem 0;
+}
+.padding-l-20 {
+  padding-left: 10px;
+  padding-left: 1rem;
+}
+.padding-r-20 {
+  padding-right: 10px;
+  padding-right: 1rem;
+}
+.padding-t-20 {
+  padding-top: 10px;
+  padding-top: 1rem;
+}
+.padding-b-20 {
+  padding-bottom: 10px;
+  padding-bottom: 1rem;
+}
+/*
+* --------------------------------------------
+* Margin
+* --------------------------------------------
+*  */
+.margin-lr-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.margin-l-20 {
+  padding-left: 20px;
+}
+.margin-r-20 {
+  padding-right: 20px;
+}
+/*
+* --------------------------------------------
+* Headings
+* --------------------------------------------
+*  */
+h1 {
+  font-size: 180%;
+  line-height: 100%;
+}
+h2 {
+  font-size: 150%;
+  line-height: 100%;
+}
+h3 {
+  font-size: 125%;
+  line-height: 100%;
+}
+h4 {
+  font-size: 112.5%;
+  line-height: 100%;
+}
+/*
+* ------------------------------------------------------
+* Images
+* ------------------------------------------------------
+*/
+/* Image Width = 100% */
+.ImageWrapper {
+  padding: 10px;
+}
+.Image,
+.ImageW100 img,
+.Image100 img {
+  width: 100%;
+  height: auto;
+  max-width: 1400px;
+  max-height: 1400px;
+}
+/* Image Height = 100% */
+.ImageH100 img {
+  height: 100%;
+  width: auto;
+  max-width: 1400px;
+  max-height: 1400px;
+}
+.Image a,
+.ImageWrapper a {
+  line-height: 0px;
+}
+
+/*
+* ------------------------------------------------------
+* Other
+* ------------------------------------------------------
+*/
+div.center {
+  margin: 0 auto;
+}
+p.center {
+  text-align: center;
+}
+.InsertSpace:after {
+  content: '\0000a0';
+}

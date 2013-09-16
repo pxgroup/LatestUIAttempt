@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="us">
+    <head>
+        <meta charset="utf-8">
+        <title>Drag & Drop form builder</title>
+        <link href="css/reset.css" rel="stylesheet">
+        <link href="css/core.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+        <script src="development-bundle/jquery-1.9.1.js"></script>
+
+        <script src="development-bundle/ui/jquery.ui.core.js"></script>
+        <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+        <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+        <script src="development-bundle/ui/jquery.ui.sortable.js"></script>
+        <script src="development-bundle/ui/jquery.ui.draggable.js"></script>
+
+
+        <script src="js/pure.js"></script>
+        <script src="js/jquery.jeditable.js"></script>
+
+
+        <link rel="stylesheet" href="../demos.css">
+
+        <script type="text/javascript">
+  
+            $(document).ready(function() {
+       
+                var directive = {
+                    
+                    "li.Section":{
+                        'section<-sections':{
+                            'li h2':'section.heading',
+                            '.Field':{
+                                'field<-section.fields':{
+                                    //                                                                        'label':'field.name'
+                                    'label':function(){
+                                        return render_textfield('this');
+                                    }
+                                }
+                            }//end .Fields
+                        }
+                    }
+                };
+
+                $.getJSON("complete.json",function(data) {
+                
+                    render_textfield = function(field){
+                        //                        alert(field.name);
+                        return field;
+                    
+                    };
+                    
+                    
+                    /* **************** */
+                    
+                    function render_Section(obj){
+                        var Template = "";
+                        var fields="<ul class=\"Fields\">";
+                        $.each(obj.fields, function(key, val) {
+                            //                            fields+="<li class=\"Field\">"+val.name+"</li>";
+                            fields+= render_Field(val);
+                        });
+                        
+                        Template+="<li class=\"Section\">";
+                        Template+="<div class=\"Title\">"+obj.heading+"</div>";
+                        Template+=fields;
+                        Template+="</li>"; //End .Section
+                        return Template;
+                    }
+                    
+                    function render_Field(obj){
+                        var Template = "";
+                        var label;
+                        Template+= "<li class=\"Field\">";
+                        Template+= "<label>"+obj.label+"</label>";
+                        
+                        if(obj.type == 'textarea'){
+                            Template+= "<textarea> </textarea> ";
+                        }else if(obj.type == 'select'){
+                            Template+= "<select class=\""+obj.class+"\" name=\""+obj.name+"\">";
+                            $.each(obj.options,function(key,val){
+                                if(obj.labels[val]){
+                                    label = obj.labels[val];
+                                }else{
+                                    label = val;
+                                }
+                                Template+= "<option value=\""+val+"\">"+label+"</option>";
+                            });
+                            Template+="</select>";
+                        }else if(obj.type == 'checkboxes'){
+                        }else{
+                            Template+= "<input type=\""+obj.type+"\" class=\""+obj.class+"\" name=\""+obj.name+"\"/>";
+      
+                        }
+
+                        Template+= "</li>"; //End .Field
+                        
+                        
+                        
+                        return Template;
+
+             
+                    }
+
+
+
+                    /* **************** */
+                    $.each(data, function(key, val) {
+                        
+                        
+                    });
+                    
+                    
+                    
+                   
+                    /* **************** */
+                    $.each(data.sections, function(key, val) {
+                        //                        $('.data').append('<li class="Section">'+val.fields[1].name+'</li>');
+                        
+                        $('.data').append('<ul id="draggable" class="LeftColumn ">'+render_Section(val)+'</ul>');
+                    });
+                    
+                    
+                    //                    $('.data').render(data, directive);
+                });
+
+                /** 
+                 * Place all code AFTER this line
+                 * *********************************************
+                 */
+                //                $("#Main").click(function(){
+                setTimeout(function(){ 
+                    $(function() {
+
+                        $("#sortable").sortable({
+                            revert: true
+                        });
+                        $("#draggable li").draggable({
+                            connectToSortable: "#sortable",
+                            helper: "clone",
+                            revert: "invalid"
+                        });
+
+                    })
+                });
+                
+                //                $('.jeditable').editable('http://www.example.com/save.php');
+
+            });
+
+
+
+        </script>
+
+    </head>
+
+    <!-- (was used in the above function and disables the ability to type or manipulate) $("ul, li").disableSelection();-->
+    <body>
+        <div id="Main">
+            <div class="w50 float-left">
+                <div class="data"></div>
+
+            </div>
+
+            <form action="">
+                <div class="w50 float-right">
+                    <ul id="sortable" class="box-dotted">
+                        <li class="ui-state-disabled">Default</li>
+                        <li class="ui-state-default">Item 2</li>
+
+                    </ul>
+                </div>
+            </form>
+
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>
